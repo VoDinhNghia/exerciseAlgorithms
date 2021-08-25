@@ -77,3 +77,24 @@ dataMerge2Array.forEach(function(Item) {
     delete Item['Name'];
 });
 console.log(`Data sau khi replace key Name la: ${JSON.stringify(dataMerge2Array)}`);
+
+// tao mang moi trong do gia tri Age - 2 con Name va ID giu nguyen
+let dataUseMap = dataMerge2Array.map((user) => {
+    return {
+        'ID': user.ID,
+        'Name': user.userName,
+        'Age': user.Age - 2
+    };
+});
+console.log(`Data sau khi dung ham map: ${JSON.stringify(dataUseMap)}`);
+//Ham fillter 
+let filterData = dataMerge2Array.filter((user) => {
+    return user.userName == 'Vo A';
+});
+console.log(`Data sau khi dung ham filter: ${JSON.stringify(filterData)}`);
+
+//ham reduce 
+let reduceData = dataMerge2Array.reduce((age, user) => {
+    return age = age + user.Age;
+}, 0);
+console.log(`Data sau khi dung ham reduce: ${JSON.stringify(reduceData)}`);
