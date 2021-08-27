@@ -57,3 +57,19 @@ for (let i = 0; i < arrayNumberFour.length; i++) {
 }
 
 console.log(nineNumberFour1.concat(nineNumberFour2)); 
+
+// Tim tat ca cac so co 4 chu so ma tong cua chung bang 4 vd: 1003, 4000...
+// Tong = 4 => 1000 <= n <= 4000 
+let listFourNumberNatural = [];
+for (let i = 1000; i < 4001; i++) {
+    let numberFirst = Math.floor(i / 1000);
+    let k = i - numberFirst * 1000;
+    let numberSecond = Math.floor(k / 100);
+    let m = k - numberSecond * 100
+    let numberThird = Math.floor(m / 10);
+    let numberFour = i % 10;
+    if (numberFirst + numberSecond + numberThird + numberFour == 4) {
+        listFourNumberNatural.push(i);
+    }
+}
+console.log(listFourNumberNatural);
